@@ -1,0 +1,224 @@
+<section class="cases">
+  <div class="cases__container">
+    <h2 class="cases__title">Кейсы</h2>
+    <ul class="cases__list">
+      <li class="cases__item">
+        <div class="cases__content">
+          <span class="cases__item-name">X1-Blockchain</span>
+          <span class="cases__item-desc">блокчейн-сеть</span>
+          <a href="#" class="cases__item-link">
+            Посмотреть
+            <svg
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="cases__img">
+          <img src="/img/cases-1.jpg" alt="" />
+        </div>
+      </li>
+      <li class="cases__item">
+        <div class="cases__content">
+          <span class="cases__item-name">KULEMIN.STORE</span>
+          <span class="cases__item-desc">магазин футбольной экипировки</span>
+          <a href="#" class="cases__item-link">
+            Посмотреть
+            <svg
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="cases__img">
+          <img src="/img/cases-2.jpg" alt="" />
+        </div>
+      </li>
+      <li class="cases__item">
+        <div class="cases__content">
+          <span class="cases__item-name">Оставьте заявку</span>
+          <span class="cases__item-desc"
+            >и здесь появится ваш идеальный сайт</span
+          >
+          <a href="#" class="cases__item-link">
+            Заполнить бриф
+            <svg
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="cases__img">
+          <img src="/img/cases-3.jpg" alt="" />
+          <span>закажите сайт,</br> чтобы оказаться на этом месте</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .cases {
+    padding-top: 200px;
+  }
+  @media (max-width:800px){
+  .cases {
+    padding-top: 75px;
+  }
+}
+  .cases__container {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+@media (max-width:800px){
+  .cases__container{
+    gap: 20px;
+  }
+}
+  .cases__title {
+    font-weight: 400;
+    font-size: clamp(50px, 7vw, 100px);
+    color: var(--color-black);
+    text-align: center;
+  }
+
+  .cases__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cases__item {
+    padding: 30px var(--container-padding);
+    border-top: 1px solid var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+
+  .cases__item:last-child{
+    border-bottom: 1px solid var(--color-black);
+  }
+  .cases__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    width: 100%;
+  }
+  .cases__item-name {
+    font-weight: 500;
+    font-size: clamp(30px, 4vw, 50px);
+    color: var(--color-black);
+  }
+
+  .cases__item-desc {
+    font-weight: 400;
+    font-size: clamp(15px, 2vw, 25px);
+    color: #888;
+  }
+
+  .cases__item-link {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 25px);
+    line-height: 1.36;
+    color: #131313;
+  }
+  @media (max-width: 630px){
+  .cases__item{
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px var(--container-padding) 30px var(--container-padding);
+  }
+  .cases__item-link{
+    margin-top: 100px;
+  }
+}
+  .cases__img {
+    position: relative;
+  }
+
+  .cases__img span {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    font-weight: 500;
+    font-size: clamp(20px, 3vw, 50px);
+    line-height: 1.2;
+    color: var(--color-white)
+  }
+  @media (max-width: 1000px){
+    .cases__img span{
+      left: 17px;
+      top: 17px;
+    }
+  }
+</style>

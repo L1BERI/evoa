@@ -1,0 +1,110 @@
+<section class="about">
+  <div class="container about__container">
+    <div class="about__content">
+      <h2 class="about__text">
+        Мы проектируем и создаем сайты, которые не кричат, а убеждают. Не
+        отвлекают, а вовлекают. Не устаревают, а остаются.
+      </h2>
+      <p class="about__text">
+        Наш подход — это минимализм с глубиной. Мы убираем лишнее, чтобы
+        оставить только то, что работает на ваш бизнес. Чистый код, продуманный
+        UX, выверенная эстетика — каждая деталь здесь имеет значение.
+      </p>
+      <p class="about__text">
+        Мы не просто делаем сайты. Мы создаем цифровую среду, где форма следует
+        за функцией, а красота рождается из простоты.
+      </p>
+      <p class="about__text">
+        Это не шаблонные решения. Это индивидуальные проекты, в которых ваша
+        философия встречается с нашей экспертизой.
+      </p>
+    </div>
+    <div class="about__img">
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  @media (max-width: 800px) {
+    .about {
+      padding-top: 100px;
+      padding-bottom: 75px;
+    }
+  }
+  .about__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+  }
+  @media (max-width: 1700px) {
+    .about__content {
+      max-width: 800px;
+    }
+  }
+
+  .about__text {
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 50px);
+    line-height: 1.36;
+    color: var(--color-black-10);
+    transition: color 0.5s ease, transform .5s ease;
+    max-width: 1000px;
+  }
+  .about__text:nth-child(2){
+    margin-left: auto;
+  }
+  .about__text:nth-child(4){
+    margin-left: auto;
+  }
+  .text-active {
+    color: var(--color-black);
+    transform: scale(1.05);
+  }
+ 
+.about__img canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+  @media (max-width: 1500px) {
+    .about__container {
+      gap: 30px;
+    }
+    .about__content {
+      max-width: 800px;
+      width: 100%;
+    }
+    .about__img {
+      min-width: 350px;
+    }
+  }
+  @media (max-width: 900px) {
+    .about__content {
+      gap: 15px;
+    }
+    .about__img {
+      min-width: 250px;
+    }
+  }
+  @media (max-width: 750px) {
+    .about__img {
+      display: none;
+    }
+    .about__content {
+      gap: 20px;
+    }
+  }
+</style>
+

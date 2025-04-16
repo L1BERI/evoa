@@ -1,0 +1,175 @@
+<section class="hero">
+  <div class="hero__container">
+    <canvas id="canvas"></canvas>
+    <h1 class="hero__title">
+      <span>Точность.</span> 
+     <span> Минимализм. </span>
+      <span>Совершенство.</span>
+    </h1>
+  </div>
+</section>
+
+<style>
+  .hero__container {
+    width: 100%;
+    height: 100vh;
+    padding-top: 420px;
+    position: relative;
+  }
+  #canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .hero__title {
+    font-weight: 400;
+    font-size: clamp(40px, 10vw,100px);
+    line-height: 1.1;
+    color: var(--color-black);
+    max-width: 737px;
+    margin-left: 50px;
+  }
+
+  @media (max-width: 800px){
+    .hero__title{
+      margin-left: 10px;
+    }
+  }
+</style>
+
+<script is:inline>
+  const Perlin = (() => {
+    let perm = new Uint8Array(512);
+    for (let i = 0; i < 256; i++) perm[i] = i;
+    for (let i = 0; i < 256; i++) {
+      let j = Math.floor(Math.random() * 256);
+      [perm[i], perm[j]] = [perm[j], perm[i]];
+    }
+    for (let i = 0; i < 256; i++) perm[i + 256] = perm[i];
+
+    function fade(t) {
+      return t * t * t * (t * (t * 6 - 15) + 10);
+    }
+
+    function lerp(t, a, b) {
+      return a + t * (b - a);
+    }
+
+    function grad(hash, x, y) {
+      let h = hash & 3;
+      let u = h < 2 ? x : y;
+      let v = h < 2 ? y : x;
+      return (h & 1 ? -u : u) + (h & 2 ? -2.0 * v : 2.0 * v);
+    }
+
+    function noise(x, y) {
+      let X = Math.floor(x) & 255;
+      let Y = Math.floor(y) & 255;
+      x -= Math.floor(x);
+      y -= Math.floor(y);
+      let u = fade(x);
+      let v = fade(y);
+      let aa = perm[X + perm[Y]];
+      let ab = perm[X + perm[Y + 1]];
+      let ba = perm[X + 1 + perm[Y]];
+      let bb = perm[X + 1 + perm[Y + 1]];
+      return (
+        lerp(
+          v,
+          lerp(u, grad(aa, x, y), grad(ba, x - 1, y)),
+          lerp(u, grad(ab, x, y - 1), grad(bb, x - 1, y - 1))
+        ) *
+          0.5 +
+        0.5
+      );
+    }
+
+    return { noise };
+  })();
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+  const heroSection = document.querySelector(".hero");
+  let cursorInsideCanvas = false;
+  let cursorInsideHero = false;
+  let width, height;
+  let time = 0;
+  const lines = 80;
+  const pointsPerLine = 160;
+  let mouse = { x: 0, y: 0 };
+
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener("resize", resize);
+  resize();
+
+  window.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+
+    if (
+      e.clientX >= rect.left &&
+      e.clientX <= rect.right &&
+      e.clientY >= rect.top &&
+      e.clientY <= rect.bottom
+    ) {
+      cursorInsideCanvas = true;
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    } else {
+      cursorInsideCanvas = false;
+    }
+  });
+
+  // Эффект вихря вокруг курсора
+  function swirlEffect(dist, radius = 150) {
+    let d = dist / radius;
+    if (d > 1) return 0;
+    return Math.sin(d * Math.PI) * 40; // Создаем вихрь вокруг курсора
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    time += 0.002;
+
+    for (let j = 0; j < lines; j++) {
+      ctx.beginPath();
+      const spacing = 8;
+      for (let i = 0; i <= pointsPerLine; i++) {
+        const x = (i / pointsPerLine) * width;
+        let widthScale = window.innerWidth < 800 ? 1.85 : 1.65
+        const baseY = height / widthScale + (j - lines / 2) * spacing;
+        let y = baseY;
+
+        const dx = x - mouse.x;
+        const dy = baseY - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        const noiseVal = Perlin.noise(i * 0.03, time + j * 0.05);
+        const wave = (noiseVal - 0.5) * 100;
+
+        // Вихрь вокруг курсора
+        const swirl = cursorInsideCanvas ? swirlEffect(dist) * (dy / (dist + 0.001)) : 0;                      
+
+        y += wave + swirl;
+
+        if (i === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+
+      ctx.strokeStyle = `rgba(13,13,13, 0.12)`; // Полупрозрачные линии
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+</script>

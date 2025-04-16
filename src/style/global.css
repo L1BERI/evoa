@@ -1,0 +1,56 @@
+@import './fonts.css';
+:root{
+
+    /* colors */
+    --color-black: #131313;
+    --color-white: #fff;
+    --color-black-10: #1313131a;
+
+    /* fonts */
+    --font-family: "Manrope", sans-serif;
+
+    /* container */
+    --container-width: 1820px;
+    --container-padding: 50px;
+    @media (max-width:800px){
+        --container-padding: 10px
+    }
+}
+
+
+body{
+    font-family: var(--font-family);
+    background-color: var(--color-white);
+   
+}
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.app{
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
+    min-width: 375px;
+}
+
+
+.container{
+    max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+::selection {
+    background-color: var(--color-black); 
+    color: var(--color-white); 
+  }

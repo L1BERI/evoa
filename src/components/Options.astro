@@ -1,0 +1,238 @@
+<section class="options">
+  <div class="container options__container">
+    <div class="options__heading">
+      <span class="options__subtitle"> Что мы делаем </span>
+      <h2 class="options__title">
+        Разрабатываем, проектируем и продвигаем: полный спектр услуг для вашего <span class="word">
+          успешного
+          <svg
+            class="word-stroke"
+            width="298"
+            height="60"
+            viewBox="0 0 298 60"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M148.872 44.7872C191.482 44.1548 239.215 44.0166 275.885 32.3549C280.172 30.9916 282.23 29.2063 283.941 26.7778C286.888 22.5966 283.418 18.6601 277.33 16.2295C249.896 5.27651 208.756 2.01184 173.439 1.4205C155.474 1.11969 137.298 0.854172 119.326 1.09141C101.953 1.32076 85.215 2.82217 68.1841 4.30918C56.4945 5.32982 44.2707 6.06333 33.9018 8.91644C24.0979 11.6141 20.1419 11.9 11.1569 15.1282C6.13424 16.9328 1 22.0726 1 25.1667C1 29.3429 2.95353 32.9877 8.77223 36.0481C24.3646 44.249 49.4055 48.8521 71.8773 51.5518C104.436 55.4634 138.632 56.8718 172.075 58.2068C215.068 59.923 256.843 59.3185 297 51.6981"
+              stroke="#131313"
+              stroke-linecap="round"></path>
+          </svg>
+        </span> бизнеса.
+      </h2>
+    </div>
+  
+  <ul class="options__list">
+    <li class="options__item">
+      <span class="options__item-name">Дизайн</span>
+      <div class="options__item-services">
+        <span class="options__item-service">Разработка уникального дизайна</span
+        >
+        <span class="options__item-service"
+          >Дизайн мобильных и десктопных интерфейсов</span
+        >
+        <span class="options__item-service">Редизайн существующих сайтов</span>
+        <span class="options__item-service">UI/UX-дизайн</span>
+        <span class="options__item-service">Иллюстрации</span>
+      </div>
+    </li>
+    <li class="options__item">
+      <span class="options__item-name">Технические услуги</span>
+      <div class="options__item-services">
+        <span class="options__item-service"
+          >Поддержка и сопровождение сайта</span
+        >
+        <span class="options__item-service"
+          >Интеграции с CRM, платежами, сервисами</span
+        >
+        <span class="options__item-service">Развёртывание на хостинг</span>
+        <span class="options__item-service">Настройка домена и SSL</span>
+      </div>
+    </li>
+    <li class="options__item">
+      <span class="options__item-name">Разработка</span>
+      <div class="options__item-services">
+        <span class="options__item-service">Корпоративные сайты</span>
+        <span class="options__item-service">Лендинги</span>
+        <span class="options__item-service">Интернет-магазины</span>
+        <span class="options__item-service">Проталы и каталоги</span>
+        <span class="options__item-service">Многостраничные сайты</span>
+        <span class="options__item-service">Промо-сайты</span>
+        <span class="options__item-service">Анимации</span>
+      </div>
+    </li>
+   
+    <li class="options__item">
+      <span class="options__item-name">Маркетинг</span>
+      <div class="options__item-services">
+        <span class="options__item-service"
+          >SEO-продвижение</span
+        >
+        <span class="options__item-service"
+          >Контекстная и таргетированная реклама  </span
+        >
+        <span class="options__item-service">Контент-маркетинг</span>
+        <span class="options__item-service">Юзабилити и повышение конверсии</span>
+        <span class="options__item-service">Веб-аналитика и отчётность </span>
+      </div>
+    </li>
+  </ul>
+</div>
+</section>
+
+<style>
+  .options {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+@media (max-width:800px){
+  .options{
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+  .options__heading {
+    position: relative;
+    max-width: 1452px;
+    margin-bottom: 150px;
+  }
+  .options__title {
+    font-weight: 400;
+    font-size: clamp(30px, 3vw, 50px);
+    line-height: 1.36;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1370px;
+    display:inline-block; 
+    text-indent: 200px;
+  }
+  .word-stroke {
+    position: absolute;
+    bottom: -0.1em; /* регулируй под размер шрифта */
+    left: -0.2em;
+    width: 110%;
+    height: auto;
+    pointer-events: none;
+  }
+
+ 
+  .options__title-bottom {
+    position: relative;
+  }
+  .word {
+    position: relative;
+    max-width: fit-content;
+  }
+
+  .options__subtitle {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    font-size: clamp(15px, 4vw, 20px);
+    line-height: 1.35;
+    color: var(--color-black);
+  }
+
+ @media (max-width: 1100px){
+  .options__subtitle{
+    position: static;
+  }
+  .options__title{
+    text-indent: 0;
+    line-height: 1.166;
+  }
+ }
+
+  .options__list {
+    display: grid;
+    gap: 100px;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    margin-left: 200px;
+
+  }
+  @media (max-width: 1340px){
+    .options__list{
+      margin-left: 100px;
+    }
+  }
+  @media (max-width: 1250px){
+    .options__list{
+      margin-left: 0;
+      column-gap: 50px;
+    }
+  }
+  @media (max-width: 970px){
+    .options__list{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .options__item {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    gap: 110px;
+    margin-left: auto;
+  }
+
+ @media (max-width:1500px){
+  .options__item{
+    gap: 50px;
+  }
+ }
+  .options__item-name {
+    max-width: 238px;
+    width: 100%;
+    font-weight: 400;
+    font-size: clamp(20px, 4vw, 25px);
+    line-height: 1.36;
+    color: var(--color-black);
+  }
+ 
+
+  .options__item-services {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  @media (max-width:800px){
+    .options__heading{
+      margin-bottom: 100px;
+    }
+    .options__list{
+      gap: 70px;
+    }
+    .options__item{
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .options__item-name{
+      max-width: 150px;
+    }
+    .options__item-services {
+      max-width: 446px;
+      width: 100%;
+    }
+  }
+@media (max-width: 568px){
+  .options__item-services{
+    gap: 10px;
+  }
+}
+  @media (max-width: 468px){
+    .options__item-name{
+      max-width: 110px;
+    }
+  }
+  .options__item-service {
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 20px);
+    line-height: 1.35;
+    color: #888;
+  }
+</style>

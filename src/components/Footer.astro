@@ -1,0 +1,140 @@
+<footer class="footer">
+  <img src="  icons/footer-waves.svg" alt="" class="footer__img" />
+  <div class="container footer__container">
+    <h2 class="footer__title">Свяжитесь с нами</h2>
+    <div class="footer__content">
+      <div class="footer__content-upper">
+        <p class="footer__content-text">Каждая история начинается с идеи.</br> Не
+        бойтесь поделиться своей.
+        </br>
+      Заполните форму, и мы вместе создадим нечто особенное.
+    </p>
+    <button class="footer__content-btn" data-open-modal-btn>
+      <svg width="119" height="120" viewBox="0 0 119 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40.6715 26.6966L92.8208 26.6973" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
+        <path d="M92.821 26.6975L92.8217 78.8468" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
+        <path d="M92.8208 26.6973L26.2471 93.2709" stroke="#131313" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+    </button>
+  </div>
+  <ul class="footer__content-bottom">
+    <li class="footer__content-bottom-item">
+      <span class="footer__content-bottom-text">telegram:</span>
+      <a href="" class="footer__content-bottom-link">@evoa_studio</a>
+    </li>
+    <li class="footer__content-bottom-item">
+      <span class="footer__content-bottom-text">email:</span>
+      <a href="" class="footer__content-bottom-link">evoa.studio@gmail.com</a>
+    </li>
+  </ul>
+</footer>
+
+<style>
+  .footer {
+    padding-top: 400px;
+    position: relative;
+    padding-bottom: 93px;
+  }
+  @media (max-width: 800px){
+    .footer{
+      padding-top: 200px;
+      padding-bottom: 50px;
+    }
+  }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+    position: relative;
+  }
+  @media (max-width:1100px){
+    .footer__container{
+      gap: 100px;
+    }
+  }
+  .footer__img {
+    position: absolute;
+    left: -30%;
+    top: 0;
+  }
+  @media (max-width:800px){
+    .footer__img{
+      left: 0;
+      width: 120%;
+      height: 100%;
+    }
+  }
+  .footer__title {
+    font-weight: 500;
+    font-size: clamp(50px, 8vw, 100px);
+    color: var(--color-black);
+  }
+
+  .footer__content {
+    max-width: 1084px;
+    width: 100%;
+    margin-left: auto;
+  }
+  .footer__content-upper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-black);
+    padding-bottom: 30px;
+  }
+  .footer__content-text {
+    max-width: 716px;
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 25px)     ;
+    color: var(--color-black);
+    line-height: 1.36;
+  }
+  .footer__content-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  /* адаптивная ширина/высота */
+  width: clamp(100px, 20vw, 120px);
+  height: clamp(100px, 20vw, 120px);
+}
+ 
+
+  .footer__content-bottom {
+    padding-top: 30px;
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+  }
+
+
+  .footer__content-bottom-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (max-width:1000px){
+     .footer__content-bottom{
+      gap: 20px;
+     }
+     .footer__content-bottom-item{
+      gap: 0;
+     }
+    }
+  .footer__content-bottom-text {
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 20px);
+    line-height: 1.35;
+    color: var(--color-black);
+  }
+  .footer__content-bottom-link {
+    font-weight: 500;
+    font-size: clamp(30px, 6vw, 50px);
+    line-height: 1.36;
+    color: var(--color-black)
+  }
+</style>

@@ -1,0 +1,719 @@
+<div class="overlay" data-overlay></div>
+<div class="modal" data-modal>
+  <div class="modal__top">
+    <a href="/" class="modal__logo">evoa</a>
+    <button class="modal__close" data-modal-close>закрыть</button>
+  </div>
+  <div class="modal__inner">
+    <div class="modal__hero">
+      <h3 class="modal__hero-title">
+        Поделитесь с нами своей мечтой, и мы поможем ей воплотиться в жизнь.
+      </h3>
+      <img src="/img/modal.svg" alt="decor" class="modal__hero-img" />
+    </div>
+    <form action="" class="modal__form" data-modal-form>
+      <div class="modal__row">
+        <span class="modal__row-number">01</span>
+        <span class="modal__row-text modal__row-name">Как вас зовут?</span>
+        <div class="modal__row-input-wrapper">
+          <input
+            type="text"
+            class="modal__input-name modal__input"
+            name="name"
+            placeholder=""
+            id="modalInputName"
+            data-name-input
+          />
+          <label class="name-label" for="name" data-name-label>Ваше имя</label>
+        </div>
+      </div>
+      <div class="modal__row">
+        <span class="modal__row-number">02</span>
+        <span class="modal__row-text">
+          <span class="modal__row-name">Ваши контакты</span>
+          <span class="modal__row-subname"
+            >выберите удобный способ связи из списка</span
+          >
+        </span>
+        <div class="modal__row-input-wrapper">
+          <input
+            type="text"
+            class="modal__input-contact modal__input"
+            name="name"
+            id="modalInputContact"
+            placeholder=""
+            value="@"
+            data-contact-input
+          />
+          <label class="name-label" for="name" data-contact-label>login</label>
+          <div class="modal__row-btns">
+            <button class="modal__row-btn btn-active" data-contact-btn="tg"
+              >telegram</button
+            >
+            <button class="modal__row-btn" data-contact-btn="mail">email</button
+            >
+            <button class="modal__row-btn" data-contact-btn="phone"
+              >номер телефона</button
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__row">
+        <span class="modal__row-number">03</span>
+        <span class="modal__row-text modal__row-name">Кратко о проекте</span>
+        <div class="modal__row-input-wrapper">
+          <textarea
+            name="modalTextarea"
+            class="modal__row-textarea"
+            placeholder="Пример: Мы производим мебель из массива дерева, сочетающую классический стиль и современные тенденции. Нашей компании важен сайт, который наглядно покажет качество наших изделий, упростит процесс выбора и оформления заказа. Нужен удобный каталог, возможность просмотра фото в высоком разрешении и простота администрирования."
+            id="modalTextarea"></textarea>
+        </div>
+      </div>
+      <div class="modal__row">
+        <span class="modal__row-number">04</span>
+        <span class="modal__row-text">
+          <span class="modal__row-name">Бюджет проекта (₽)</span>
+          <span class="modal__row-subname">напишите или выберите из списка</span
+          >
+        </span>
+        <div class="modal__row-input-wrapper">
+          <input
+            type="text"
+            class="modal__input-price modal__input"
+            name="name"
+            id="modalInputContact"
+            placeholder=""
+            data-price-input
+          />
+          <label class="name-label" for="name" data-price-label
+            >мин. стоимость 80.000</label
+          >
+          <div class="modal__row-btns">
+            <button class="modal__row-btn btn-active" data-price-btn="80.000-120.000"
+              >80.000 - 120.000</button
+            >
+            <button class="modal__row-btn" data-price-btn="120.000-170.000"
+              >120.000 - 170.000</button
+            >
+            <button class="modal__row-btn" data-price-btn="170.000-230.000"
+              >170.000 - 230.000</button
+            >
+            <button class="modal__row-btn" data-price-btn='230.000-300.000'
+              >230.000 - 300.000</button
+            >
+            <button class="modal__row-btn" data-price-btn="300.000+"
+              >больше 300.000</button
+            >
+          </div>
+        </div>
+      </div>
+      <div class="modal__send">
+        <button class="modal__send-btn" data-modal-send>
+          Отправить
+          <svg class="send-static"
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M33.9626 22.0322L77.4204 22.0327"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="square"></path>
+            <path
+              d="M77.4202 22.0328L77.4208 65.4906"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="square"></path>
+            <path
+              d="M77.4204 22.0327L21.9424 77.5108"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"></path>
+          </svg>
+          <svg class="send-hover"
+            width="100"
+            height="100"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M33.9626 22.0322L77.4204 22.0327"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="square"></path>
+            <path
+              d="M77.4202 22.0328L77.4208 65.4906"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"
+              stroke-linecap="square"></path>
+            <path
+              d="M77.4204 22.0327L21.9424 77.5108"
+              stroke="#131313"
+              stroke-width="2"
+              stroke-miterlimit="10"></path>
+          </svg>
+        </button>
+        <span class="modal__send-text">
+          отправляя заявку, вы соглашаетесь с нашей <a href="#"
+            >политикой конфедициальности</a
+          >
+        </span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script is:inline>
+  const modalForm = document.querySelector("[data-modal-form]");
+
+  const modalNameInput = modalForm?.querySelector("[data-name-input]");
+  const modalNameLabel = modalForm?.querySelector("[data-name-label]");
+
+  modalNameInput?.addEventListener("focus", () => {
+    if (modalNameLabel) {
+      modalNameLabel.textContent = "Приятно познакомиться!";
+    }
+  });
+  modalNameInput?.addEventListener("blur", () => {
+    if (modalNameInput.value == "") {
+      modalNameLabel.textContent = "Ваше имя";
+    } else {
+      modalNameLabel.textContent = "Приятно познакомиться!";
+    }
+  });
+
+  
+  const contactInput = document.querySelector("[data-contact-input]");
+const contactLabel = document.querySelector("[data-contact-label]");
+const buttons = document.querySelectorAll("[data-contact-btn]");
+
+let activeType = "tg"; 
+
+// Маска телефона
+function handlePhoneInput() {
+  let value = contactInput.value.replace(/\D/g, "");
+
+  if (value.startsWith("7")) {
+    value = value.slice(1);
+  }
+
+  let formatted = "+7";
+
+  if (value.length > 0) formatted += " (" + value.substring(0, 3);
+  if (value.length >= 4) formatted += ") " + value.substring(3, 6);
+  if (value.length >= 7) formatted += "-" + value.substring(6, 8);
+  if (value.length >= 9) formatted += "-" + value.substring(8, 10);
+
+  contactInput.value = formatted;
+}
+
+function applyPhoneMask() {
+  contactInput.addEventListener("input", handlePhoneInput);
+}
+
+function removePhoneMask() {
+  contactInput.removeEventListener("input", handlePhoneInput);
+}
+
+
+function preventAtDeletion(e) {
+  if (contactInput.selectionStart <= 1 && (e.key === "Backspace" || e.key === "Delete")) {
+    e.preventDefault();
+  }
+}
+
+function restoreAtPrefix() {
+  if (!contactInput.value.startsWith("@")) {
+    contactInput.value = "@" + contactInput.value.replace(/@/g, "");
+  }
+}
+
+function enableTgProtection() {
+  contactInput.addEventListener("keydown", preventAtDeletion);
+  contactInput.addEventListener("input", restoreAtPrefix);
+}
+
+function disableTgProtection() {
+  contactInput.removeEventListener("keydown", preventAtDeletion);
+  contactInput.removeEventListener("input", restoreAtPrefix);
+}
+
+
+function updateContactInput(type) {
+  if (!type) type = activeType; 
+
+  activeType = type;
+  removePhoneMask();
+  disableTgProtection();
+  contactInput.value = "";
+  contactInput.placeholder = "";
+
+
+  contactInput.classList.remove("tg-focused");
+  contactInput.classList.remove("phone-focused");
+  contactLabel.classList.remove("mail-active");
+  contactLabel.classList.remove("phone-active");
+
+  if (type === "tg") {
+    contactInput.value = "@";
+    contactLabel.textContent = "login";
+    enableTgProtection();
+    contactInput.classList.add("tg-focused");
+  } else if (type === "mail") {
+    contactLabel.textContent = "Введите почту";
+    contactLabel.classList.add('mail-active')
+  } else if (type === "phone") {
+    contactInput.value = "+7";
+    contactInput.classList.add("phone-focused");
+    contactLabel.textContent = "(000) 000 00-00";
+    contactLabel.classList.add('phone-active')
+    applyPhoneMask();
+  }
+}
+
+
+contactInput.addEventListener("focus", () => {
+  contactLabel.textContent = "Мы с вами свяжемся!";
+});
+
+contactInput.addEventListener("blur", () => {
+  if (contactInput.value === "" || contactInput.value === "@" || contactInput.value === "+7") {
+    updateContactInput(); 
+  }
+});
+
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const type = e.target.getAttribute("data-contact-btn");
+
+    buttons.forEach((btn) => btn.classList.remove("btn-active"));
+    e.target.classList.add("btn-active");
+
+    updateContactInput(type);
+  });
+});
+
+
+updateContactInput("tg");
+
+const modalPriceInput = modalForm.querySelector('[data-price-input]')
+const modalPriceLabel = modalForm.querySelector('[data-price-label')
+const modalPriceBtns = modalForm.querySelectorAll('[data-price-btn]')
+modalPriceInput?.addEventListener("focus", () => {
+    if (modalPriceLabel) {
+        modalPriceLabel.textContent = "Отлично!";
+    }
+  });
+  modalPriceInput?.addEventListener("blur", () => {
+    if (modalPriceInput.value == "") {
+        modalPriceLabel.textContent = "мин. стоимость  80.000";
+    } else {
+        modalPriceLabel.textContent = "Отлично!";
+    }
+  });
+
+  modalPriceBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault()
+        modalPriceInput.value = btn.dataset.priceBtn
+        modalPriceLabel.textContent = 'Отлично!'
+    modalPriceBtns.forEach(item => item.classList.remove('btn-active'))
+    btn.classList.add('btn-active')
+    })
+  })
+
+  const modal = document.querySelector('[data-modal]')
+
+
+
+  let lastScrollTop = 0;
+  
+  modal.addEventListener('scroll', () => {
+  if (modal.scrollTop > 0 && modal.style.top !== '0px') {
+    modal.style.top = '0px';
+  } else if (modal.scrollTop === 0 && modal.style.top !== '100px') {
+    modal.style.top = '100px';
+  }
+});
+</script>
+<style>
+  .overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(19, 19, 19, 0.521);
+    transform-origin: center center;
+    z-index: 15;
+    transition: all 0.5s ease-in-out;
+  }
+  .overlay-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .modal {
+    position: fixed;
+    z-index: 20;
+    background-color: var(--color-white);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    top: 100dvh;
+    padding-bottom: var(--container-padding);
+    overflow-y: auto;
+    --modal-black: #131313;
+    --modal-grey: #888;
+    transition: all 0.5s ease-in-out;
+  }
+.modal__top{
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-white);
+}
+  .modal-active {
+    top: 100px;
+    opacity: 1;
+  }
+  .modal__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px var(--container-padding);
+    border-bottom: 1px solid var(--color-black);
+    z-index: 5;
+  }
+  .modal__logo {
+    font-weight: 500;
+    font-size: clamp(20px, 3vw, 30px);
+    line-height: 1.36667;
+    color: var(--modal-black);
+  }
+  .modal__close {
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 20px);
+    line-height: 1.35;
+    color: var(--modal-black);
+  }
+
+  .modal__hero {
+    position: relative;
+    border-bottom: 1px solid var(--color-black);
+    padding: 130px var(--container-padding) clamp(80px, 16vw,300px) var(--container-padding);
+    overflow: hidden;
+  }
+  .modal__hero-title {
+    font-weight: 400;
+    font-size: clamp(30px, 4vw,70px);
+    line-height: 1.28571;
+    color: var(--modal-black);
+    text-indent: clamp(80px ,9vw, 200px);
+  }
+
+  .modal__hero-img {
+    position: absolute;
+    z-index: -1;
+    bottom: -7%;
+  }
+  @media (max-width:1200px){
+    .modal__hero-img {
+        width: 100%;
+    }
+  }
+  .modal__row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 30px;
+    padding: var(--container-padding);
+    border-bottom: 1px solid var(--color-black);
+    position: relative;
+  }
+  .modal__row-number {
+    font-weight: 400;
+    font-size: clamp(20px, 3vw, 30px);
+    color: var(--modal-black);
+  }
+
+  @media (max-width:800px){
+    .modal__row-number{
+        position: absolute;
+        left: 10px;
+        top: 30px;
+        
+    }
+
+    .modal__row{
+        padding: 30px var(--container-padding) 40px 83px;
+        flex-direction: column;
+        gap: 50px;
+    }
+  }
+  .modal__row-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 410px;
+    width: 100%;
+  }
+
+  .modal__row-name {
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 30px);
+    color: var(--modal-black);
+  }
+  .modal__row-subname {
+    font-weight: 400;
+    font-size: clamp(15px, 2vw, 20px);
+    color: var(--modal-grey);
+  }
+  .modal__row-input-wrapper {
+    max-width: 752px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .modal__input {
+    width: 100%;
+    background-color: var(--color-white);
+    font-weight: 400;
+    font-size: clamp(25px, 2vw, 30px);
+    color: var(--color-black);
+  }
+
+  .name-label {
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    font-weight: 400;
+    font-size: clamp(20px, 2vw, 30px);
+    color: rgba(19, 19, 19, 0.2);
+    top: 5px;
+    transition: all 0.5s ease;
+  }
+  .name-label[data-contact-label] {
+    left: 30px;
+  }
+  .modal__row-btns {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+    max-width: 348px;
+    width: 100%;
+  }
+  .modal__row-btn {
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 20px);
+    color: var(--modal-grey);
+    position: relative;
+    width: 100%;
+    text-align: left;
+    transition: all .5s ease;
+  }
+  .modal__row-btn::before {
+  content: '';  /* добавляем пустое содержимое, если нужно */
+  position: absolute;
+  width: 0%;
+  height: 1px;  
+  background-color: var(--modal-black);  
+  bottom: -10px;  /* начальная невидимость */
+  transition: all 0.5s ease; /* плавное изменение прозрачности */
+}
+.btn-active {
+  color: var(--modal-black);
+}
+
+.btn-active.modal__row-btn::before {
+ width: 100%;
+}
+
+
+
+  textarea {
+    width: 100%;
+    height: 328px;
+    resize: none;
+    font-weight: 400;
+    font-size: clamp(20px ,3vw, 30px);
+    color: var(--color-black);
+  }
+  textarea::placeholder {
+    color:  rgba(19, 19, 19, 0.2);
+  }
+  @media (max-width:568px) {
+    textarea{
+        height: 375px;
+    }
+  }
+  .modal__send {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 398px;
+    gap: 50px;
+    padding-top: 50px;
+    position: relative;
+  }
+  .modal__send-btn {
+    font-weight: 400;
+    font-size: clamp(40px, 4vw, 50px);
+    line-height: 1.36;
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+    max-width: 380px;
+    width: 100%;
+    position: relative;
+    padding: 5px 0;
+  }
+
+  @media (max-width: 1100px){
+    .modal__send-btn{
+        max-width: 350px;
+    }
+  }
+  @media (max-width: 990px){
+    .modal__send-btn{
+        max-width: 300px;
+    }
+    .modal__send{
+        /* margin-left: 100px; */
+        gap: 20px;
+    }
+    .modal__send-btn svg{
+        /* width: 90%; */
+    }
+  }
+  @media (max-width: 500px){
+    .modal__send{
+        margin-left: 100px;
+    }
+  }
+
+  .send-static {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.send-hover {
+    position: absolute;
+    right: 60px;
+    bottom: -80px;
+    opacity: 0;
+    transform: translate(-60px, 80px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.modal__send-btn:hover .send-static {
+    opacity: 0;
+    transform: translate(80px, -80px);
+}
+
+.modal__send-btn:hover .send-hover {
+    opacity: 1;
+    bottom: -10px;
+    right: 0;
+    transform: translate(0);
+}
+ 
+  .modal__send-text {
+    font-weight: 400;
+    font-size: clamp(12px, 3vw, 20px);
+    line-height: 1.35;
+    color: #ccc;
+  }
+  .modal__send-text a {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+  }
+
+  .modal__input-name:focus + label,
+  .modal__input-name:not(:placeholder-shown) + label {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+ 
+  .modal__input-price:focus + label,
+  .modal__input-price:not(:placeholder-shown) + label {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .modal__input-contact:focus + label,
+  .modal__input-contact:not(:placeholder-shown) + label {
+    left: 60%;
+    transform: translateX(-50%);
+  }
+  .modal__input-contact.tg-focused:not(:focus) + label {
+  left: 30px;
+  transform: translateX(0);
+}
+  .modal__input-contact.phone-focused:not(:focus) + label {
+  left: 40px;
+  transform: translateX(0);
+}
+  .mail-active[data-contact-label]{
+    left: 0;
+  }
+  .phone-active[data-contact-label]{
+    left: 40px;
+  }
+  @media (max-width: 568px){
+    .modal__input-name:focus + label,
+  .modal__input-name:not(:placeholder-shown) + label {
+    top: -50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .modal__input-contact:focus + label,
+  .modal__input-contact:not(:placeholder-shown) + label {
+    left: 100px;
+    top: -10%;
+  }
+  .modal__input-contact.tg-focused:not(:focus) + label {
+  left: 25px;
+  top: 5%;
+  transform: translateX(0);
+}
+  .modal__input-contact.phone-focused:not(:focus) + label {
+  left: 30px;
+  top: 4%;
+  transform: translateX(0);
+}
+.modal__input-price:focus + label,
+  .modal__input-price:not(:placeholder-shown) + label {
+    left: 0;
+    top: -10%;
+    transform: translateY(-50%);
+  }
+  }
+</style>

@@ -1,0 +1,385 @@
+<section class="steps">
+  <div class="steps__top">
+    <h2 class="steps__title">Жизненный цикл проекта</h2>
+    <p class="steps__text">
+      Мы внимательно слушаем вас, изучаем вашу цель и предлагаем решение,
+      которое работает. Все шаги прозрачны и понятны.
+    </p>
+  </div>
+  <ul class="steps__list">
+    <li class="steps__item" data-frequency="261.63">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">01</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+    <li class="steps__item" data-frequency="293.66">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">02</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+    <li class="steps__item" data-frequency="329.63">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">03</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+    <li class="steps__item" data-frequency="349.23">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">04</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+    <li class="steps__item" data-frequency="392.00">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">05</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+    <li class="steps__item" data-frequency="342.00">
+      <div class="steps__item-wrapper">
+        <span class="steps__item-number">06</span>
+        <span class="steps__item-text">
+          Мы начинаем с глубокого погружения в ваш бизнес. Изучаем вашу целевую
+          аудиторию, проводим анализ конкурентов и определяем ваши уникальные
+          предложения. Это нужно для того, чтобы на этапе концепции строить все
+          на основе фактов и данных.
+        </span>
+      </div>
+      <canvas class="steps__wave-canvas" height="40"></canvas>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .steps {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 200px;
+  }
+@media (max-width:800px){
+  .steps{
+    padding-top: 75px;
+    padding-bottom: 75px;
+    gap: 100px;
+  }
+}
+  .steps__top {
+    display: flex;
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 var(--container-padding);
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .steps__title {
+    font-weight: 400;
+    font-size: clamp(40px, 4vw, 70px);
+    line-height: 1.37143;
+    color: var(--color-black);
+    max-width: 847px;
+  }
+
+  .steps__text {
+    font-weight: 400;
+    font-size: clamp(15px, 2vw, 20px);
+    line-height: 1.35;
+    color: var(--color-black);
+    max-width: 716px;
+  }
+  @media (max-width: 1100px){
+   .steps__top{
+    flex-direction: column;
+    border: none;
+   }
+   .steps__title{
+    position: relative;
+    width: 100%;
+    max-width: none;
+   }
+   .steps__title::before{
+    content: '';
+    width: 150%;
+    height: 1px;
+    background-color:  var(--color-black);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -20%;
+   }
+   .steps__title::after{
+    content: '';
+    width: 150%;
+    height: 1px;
+    background-color:  var(--color-black);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+   }
+   .steps__text{
+    max-width: none;
+   }
+
+  }
+@media (max-width: 800px){
+  .steps__title{
+    line-height: 1.125;
+  }
+}
+  .steps__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .steps__item {
+    position: relative;
+  }
+
+  .steps__item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+    overflow: hidden;
+    padding-top: 72px;
+  }
+@media (max-width: 800px){
+  .steps__item-wrapper{
+    padding-top: 0;
+  }
+}
+  .steps__wave-canvas {
+    width: 105%;
+    height: 40px;
+    display: block;
+    position: absolute;
+    bottom: -20px;
+  }
+  .steps__item-number {
+    font-weight: 500;
+    font-size: 250px;
+    line-height: 1.2;
+    color: var(--color-black);
+    position: absolute;
+    left: 50px;
+    top: 0;
+  }
+
+ 
+  .steps__item-text {
+    max-width: 716px;
+    margin-left: auto;
+    font-weight: 400;
+    font-size: clamp(15px, 3vw, 20px);                               
+    line-height: 1.35;
+    color: var(--color-black);
+    padding-right: 50px;
+  }
+  @media (max-width:1080px){
+    .steps__item-text{
+      padding-right: 0;
+      padding-left: 100px;
+    }
+    .steps__item-number {
+      left: 30px;
+      font-size: 200px;
+      top: 25%;
+    }
+  }
+
+  @media(max-width:900px){
+    .steps__item-number{
+      left: 10px;
+    }
+    .steps__item-text{
+     
+      padding-left: 150px;
+    }
+  }
+  @media (max-width: 850px){
+    .steps__item-wrapper{
+      display: flex;
+      flex-direction: column;
+    }
+    .steps__item-number{
+      position: relative;
+      font-size: clamp(120px, 25vw, 200px);
+    }
+    .steps__item-number::before{
+      content: '';
+      width: 130%;
+      height: 25px;
+      border-top: 1px solid var(--color-black);
+      position: absolute;
+      background-color: var(--color-white);
+      bottom: 15%;
+      z-index: 1;
+      left: -5%;
+    }
+    .steps__item-text{
+      padding: 0;
+      margin: -20px 0 0 10px;
+    }
+    .steps__wave-canvas{
+     display: none; 
+    }
+  }
+</style>
+
+<script>
+  let audioCtx: any = null;
+
+  function initAudio() {
+    if (!audioCtx) {
+      audioCtx = new (window.AudioContext || window.AudioContext)();
+    }
+    if (audioCtx.state === "suspended") {
+      audioCtx.resume();
+    }
+  }
+
+  function playKalimbaSound(frequency: number) {
+    if (!audioCtx || audioCtx.state !== "running") return;
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.6);
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.6);
+  }
+
+  // 🌊 Волна
+  class WaveLine {
+    private canvas: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private width: number;
+    private height: number;
+    private frequency: number;
+    private phase: number;
+    private amplitude: number;
+    private active: boolean;
+
+    constructor(canvas: HTMLCanvasElement, frequency: number = 261.63) {
+      this.canvas = canvas;
+      const context = canvas.getContext("2d");
+      if (!context) {
+        throw new Error("Canvas context is not supported or not available.");
+      }
+      this.ctx = context;
+
+      this.width = canvas.width;
+      this.height = canvas.height;
+      this.frequency = frequency;
+
+      this.phase = 0;
+      this.amplitude = 0;
+      this.active = false;
+
+      this.animate = this.animate.bind(this);
+      requestAnimationFrame(this.animate);
+    }
+
+    public trigger(): void {
+      this.amplitude = 20;
+      this.active = true;
+      this.phase = 0;
+    }
+
+    private animate(): void {
+      const ctx = this.ctx;
+      ctx.clearRect(0, 0, this.width, this.height);
+
+      ctx.beginPath();
+      ctx.moveTo(0, this.height / 2);
+
+      for (let x = 0; x < this.width; x++) {
+        const y =
+          this.height / 2 + Math.sin((x + this.phase) * 0.04) * this.amplitude;
+        ctx.lineTo(x, y);
+      }
+
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      if (this.active) {
+        this.amplitude *= 0.94;
+        if (this.amplitude < 0.1) {
+          this.active = false;
+        }
+      }
+
+      this.phase += 4;
+
+      requestAnimationFrame(this.animate);
+    }
+  }
+
+  // 🎯 Привязка к каждому элементу
+  document.querySelectorAll(".steps__item").forEach((item) => {
+    const frequency = parseFloat(
+      item.getAttribute("data-frequency") || "261.63"
+    );
+    const canvasSound = item.querySelector<HTMLCanvasElement>(
+      ".steps__wave-canvas"
+    );
+    let wave: any;
+    if (canvasSound) {
+      wave = new WaveLine(canvasSound, frequency);
+    }
+
+    canvasSound?.addEventListener("mouseenter", () => {
+      initAudio();
+      playKalimbaSound(frequency);
+      wave.trigger();
+      console.log(123);
+    });
+  });
+</script>
