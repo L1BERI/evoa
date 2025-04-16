@@ -3,25 +3,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import 'lenis/dist/lenis.css';
 
-// Инициализация Lenis (включаем autoRaf false для контроля)
+
 const lenis = new Lenis({
   autoRaf: false
 });
 
-// Функция обновления Lenis и ScrollTrigger вручную
 function raf(time) {
   lenis.raf(time);
-  ScrollTrigger.update(); // Обновляем ScrollTrigger вручную
-  requestAnimationFrame(raf); // Постоянно обновляем
+  ScrollTrigger.update(); 
+  requestAnimationFrame(raf); 
 }
 requestAnimationFrame(raf);
 
-// Регистрация ScrollTrigger
+
 gsap.registerPlugin(ScrollTrigger);
 
 
 
-// Обработчик события для скролла Lenis и обновления ScrollTrigger
+
 lenis.on("scroll", ScrollTrigger.update);
 
 // on load
