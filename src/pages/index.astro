@@ -34,33 +34,8 @@ import Layout from "../layouts/Layout.astro";
   }
 </style>
 
-<script is:inline>
-  const openModalBtn = document.querySelector("[data-open-modal-btn]");
-  const modalEl = document.querySelector("[data-modal]");
-  const overlayEl = document.querySelector("[data-overlay]");
-  const modalCloseBtn = modalEl.querySelector("[data-modal-close]");
-  const bodyEl = document.body;
-  let modalOpen = false;
-  openModalBtn?.addEventListener("click", (e) => {
-    e.preventDefault();
-    modalEl?.classList.add("modal-active");
-    overlayEl?.classList.add("overlay-active");
-    bodyEl.classList.add("body--fixed");
-    modalOpen = !modalOpen;
-  });
-
-  overlayEl?.addEventListener("click", () => {
-    modalEl?.classList.remove("modal-active");
-    overlayEl?.classList.remove("overlay-active");
-    bodyEl.classList.remove("body--fixed");
-  });
-
-  modalCloseBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    modalEl?.classList.remove("modal-active");
-    overlayEl?.classList.remove("overlay-active");
-    bodyEl.classList.remove("body--fixed");
-  });
+<script type="module" is:inline>
+  
 
   const canvasMouse = document.getElementById("mouse");
   const ctxMouse = canvasMouse.getContext("2d");

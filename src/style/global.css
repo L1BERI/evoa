@@ -41,7 +41,11 @@ img{
     margin: 0 auto;
     min-width: 375px;
 }
-
+.body--fixed {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
 
 .container{
     max-width: calc(var(--container-width) + (var(--container-padding) * 2));
