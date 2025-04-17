@@ -141,10 +141,14 @@ links.forEach(link => {
       flex-direction: column;
       height: 100vh;
       left: 0;
-      top: -100%;
+      top: -100dvh;
+      opacity: 0;
+      visibility: hidden;
       width: 100vw;
       overflow: hidden;
-      transition: top 0.8s ease;
+      transition: top .8s ease,
+      opacity .5s ease,
+      visibility .5s ease;
       padding: 10px 5px;
       transform-origin: center center;
       z-index: 10;
@@ -215,6 +219,8 @@ links.forEach(link => {
     }
     .menu-open {
       top: 0;
+      opacity: 1;
+      visibility: visible;
     }
   }
 </style>
