@@ -1,4 +1,5 @@
 import {lenis} from './lenisScroll'
+
 const openModalBtn = document.querySelector("[data-open-modal-btn]");
 const modalEl = document.querySelector("[data-modal]");
 const overlayEl = document.querySelector("[data-overlay]");
@@ -30,3 +31,4 @@ modalCloseBtn?.addEventListener("click", (e) => {
   overlayEl?.classList.remove("overlay-active");
   lenisEl?.classList.remove("body--fixed");
 });
+
