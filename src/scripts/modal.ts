@@ -1,3 +1,4 @@
+import { log } from 'node_modules/astro/dist/core/logger/core';
 import {lenis} from './lenisScroll'
 
 const openModalBtn = document.querySelector("[data-open-modal-btn]");
@@ -299,21 +300,21 @@ async function sendData(data: Record<string, string | undefined>) {
   const formBlock = document.querySelector(".modal__form") as HTMLElement;
   const successBlock = document.querySelector(".modal__succes") as HTMLElement;
   const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
-
+ 
+  
   const formData = new FormData();
   for (const key in data) {
     formData.append(key, data[key] || "");
   }
 
-  // Можно добавить скрытые поля, если хочешь редирект или антибот-защиту
-  // formData.append("_next", "https://yourdomain.com/thanks.html");
 
   try {
-    const res = await fetch("https://formsubmit.co/kael1nvoker@mail.ru", {
+    const res = await fetch("https://formsubmit.co/91c1c0b31b05a30322cc2147b0edb8b8", {
       method: "POST",
       body: formData,
     });
-
+    console.log(res);
+    
     if (res.ok) {
       modal.classList.add("succes");
       heroModalTitle.textContent =
