@@ -8,7 +8,32 @@
           <span class="cases__item-desc">блокчейн-сеть</span>
           <a href="#" class="cases__item-link">
             Посмотреть
-            <svg
+            <svg class="cases-static"
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+            <svg class="cases-hover"
               width="41"
               height="41"
               viewBox="0 0 41 41"
@@ -45,7 +70,32 @@
           <span class="cases__item-desc">магазин футбольной экипировки</span>
           <a href="#" class="cases__item-link">
             Посмотреть
-            <svg
+            <svg class="cases-static"
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+            <svg class="cases-hover"
               width="41"
               height="41"
               viewBox="0 0 41 41"
@@ -84,7 +134,32 @@
           >
           <a href="#" class="cases__item-link">
             Заполнить бриф
-            <svg
+            <svg class="cases-static"
+              width="41"
+              height="41"
+              viewBox="0 0 41 41"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M13.9846 9.61257L31.3677 9.61279"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3679 9.61302L31.3681 26.9961"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="square"></path>
+              <path
+                d="M31.3677 9.61279L9.17646 31.804"
+                stroke="#131313"
+                stroke-width="1.5"
+                stroke-miterlimit="10"></path>
+            </svg>
+            <svg class="cases-hover"
               width="41"
               height="41"
               viewBox="0 0 41 41"
@@ -191,7 +266,23 @@
     font-size: clamp(20px, 2vw, 25px);
     line-height: 1.36;
     color: #131313;
+    position: relative;
+    overflow: hidden;
   }
+  .cases-static{
+    transition: all .8s ease;
+  }
+  .cases-hover{
+    transform: translate(-230%, 50px);
+    transition: all .8s ease-in-out;
+  }
+  .cases__item-link:hover .cases-static{
+    transform: translate(50px,-50px);
+  }
+  .cases__item-link:hover .cases-hover{
+    transform: translate(-100%,0px);
+  }
+
   @media (max-width: 630px){
   .cases__item{
     flex-direction: column;

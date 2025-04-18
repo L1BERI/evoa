@@ -202,6 +202,7 @@
     position: absolute;
     left: 50px;
     top: 0;
+    transition: all .8s ease-in-out;
   }
 
  
@@ -213,6 +214,14 @@
     line-height: 1.35;
     color: var(--color-black);
     padding-right: 50px;
+    transition: all .8s ease;
+  }
+
+  .steps__item:hover .steps__item-number{
+    transform: translateX(10%);
+  }
+  .steps__item:hover .steps__item-text{
+    transform: translateX(-10%);
   }
   @media (max-width:1080px){
     .steps__item-text{

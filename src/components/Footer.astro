@@ -10,7 +10,12 @@
       Заполните форму, и мы вместе создадим нечто особенное.
     </p>
     <button class="footer__content-btn" data-open-modal-btn>
-      <svg width="119" height="120" viewBox="0 0 119 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="arrow-static" width="119" height="120" viewBox="0 0 119 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40.6715 26.6966L92.8208 26.6973" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
+        <path d="M92.821 26.6975L92.8217 78.8468" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
+        <path d="M92.8208 26.6973L26.2471 93.2709" stroke="#131313" stroke-width="2" stroke-miterlimit="10" />
+      </svg>
+      <svg class="arrow-hover" width="119" height="120" viewBox="0 0 119 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M40.6715 26.6966L92.8208 26.6973" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
         <path d="M92.821 26.6975L92.8217 78.8468" stroke="#131313" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square" />
         <path d="M92.8208 26.6973L26.2471 93.2709" stroke="#131313" stroke-width="2" stroke-miterlimit="10" />
@@ -97,11 +102,35 @@
   background: none;
   border: none;
   cursor: pointer;
-
+  overflow: hidden;
   /* адаптивная ширина/высота */
   width: clamp(100px, 20vw, 120px);
   height: clamp(100px, 20vw, 120px);
+  position: relative;
 }
+
+.arrow-static{
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all .8s ease;
+}
+
+.arrow-hover{
+  position: absolute;
+  bottom: -100%;
+  left: -100%;
+  transition: all .8s ease-in-out;
+}
+.footer__content-btn:hover .arrow-static{
+  right: -100%;
+  top: -100%;
+}
+.footer__content-btn:hover .arrow-hover{
+  bottom: 0%;
+  left: 0;
+}
+
  
 
   .footer__content-bottom {

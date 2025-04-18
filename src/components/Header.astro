@@ -16,7 +16,8 @@
   </div>
 </header>
 <script>
-  import gsap from "gsap";
+  import type { addIssueToContext } from "astro:schema";
+import gsap from "gsap";
 
   const burgerMenu = document.querySelector("[data-burger]");
   const headerNav = document.querySelector("[data-menu]");
@@ -64,9 +65,17 @@ links.forEach(link => {
   });
 
   link.addEventListener("mouseleave", () => {
-    // Если нужно скрывать шарик:
-    // if (indicator) indicator.style.opacity = "0";
+   
+    if (indicator) indicator.style.opacity = "0";
   });
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY >= 100){
+      document.querySelector('.header')?.classList.add('scrolling')
+    } else {
+      document.querySelector('.header')?.classList.remove('scrolling')
+
+    }
+  })
 })
 </script>
 
@@ -78,7 +87,11 @@ links.forEach(link => {
     top: 0;
     padding: 30px var(--container-padding);
     z-index: 10;
-    background-color: var(--color-white);
+  }
+  .scrolling {
+    backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.6); 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
   }
   .header__container {
     display: flex;

@@ -314,13 +314,13 @@
     position: relative;
     border-bottom: 1px solid var(--color-black);
     padding: clamp(76px, 8vw, 130px) var(--container-padding)
-      clamp(80px, 16vw, 300px) var(--container-padding);
+      clamp(80px, 16vw, 250px) var(--container-padding);
     overflow: hidden;
   }
 
   .succes .modal__hero{
     padding: clamp(76px, 8vw, 130px) var(--container-padding)
-      clamp(80px, 16vw, 200px) var(--container-padding);
+      clamp(80px, 16vw, 250px) var(--container-padding);
   }
   .modal__hero-title {
     font-weight: 400;
@@ -333,7 +333,8 @@
   .modal__hero-img {
     position: absolute;
     z-index: -1;
-    bottom: -7%;
+    bottom: -15%;
+    right: -10%;
   }
   @media (max-width: 1200px) {
     .modal__hero-img {
@@ -513,83 +514,87 @@
     display: flex;
     flex-direction: column;
 
-    gap: 50px;
+    gap: clamp(20px, 3vw, 50px);
     padding-top: 50px;
     position: relative;
     width: 100%;
   }
   .modal__send-btn {
-    font-weight: 400;
-    font-size: clamp(40px, 4vw, 50px);
-    line-height: 1.36;
-    color: var(--color-black);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    overflow: hidden;
-    max-width: 380px;
-    width: 100%;
-    position: relative;
-    padding: 5px 0;
-    margin-left: auto;
-  }
-  .modal__send-btn svg {
-  width: clamp(40px, 5vw, 60px);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.36;
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow: hidden;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+}
+
+.modal__send-btn svg {
+  width: clamp(40px, 5vw, 100px);
   height: auto;
   aspect-ratio: 1 / 1;
+  transition: transform 0.6s ease-in-out, bottom 0.6s ease-in-out, right 0.6s ease-in-out;
 }
-  @media (max-width: 1100px) {
-    .modal__send-btn {
-      max-width: 350px;
-    }
-  }
-  @media (max-width: 990px) {
-    .modal__send-btn {
-      max-width: clamp(250px, 3vw, 300px);
-    }
-    .modal__send {
-      /* margin-left: 100px; */
-      gap: 20px;
-    }
-    .modal__send-btn svg {
-      /* width: 90%; */
-    }
-  }
- 
 
-  .send-static {
-    position: absolute;
-    right: 0;
-    top: clamp(14px, 5vw, 0px);
-    opacity: 1;
-    transform: translateY(0);
-    transition:
-      opacity 0.8s ease,
-      transform 0.8s ease;
+/* Статичный элемент */
+.send-static {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.8s ease;
+}
+
+/* Анимационный элемент, появляется при ховере */
+.send-hover {
+  position: absolute;
+  right: 80px;
+  bottom: -90px;
+  opacity: 1;
+  transition: transform 0.6s ease-in-out, bottom 0.6s ease-in-out, right 0.6s ease-in-out;
+}
+
+.modal__send-btn:hover .send-static {
+  transform: translate(60px, -80px);
+}
+
+.modal__send-btn:hover .send-hover {
+  bottom: -13px;
+  right: 10px;
+}
+
+/* Адаптация под экраны */
+@media (max-width: 1100px) {
+  .modal__send-btn {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 990px) {
+  .modal__send-btn {
+    max-width: clamp(210px, 37vw, 300px);
   }
 
   .send-hover {
-    position: absolute;
     right: 60px;
-    bottom: -80px;
-    opacity: 0;
-    transform: translate(-60px, 80px);
-    transition:
-      opacity 0.8s ease-in-out,
-      transform 0.8s ease-in-out;
+    bottom: -70px;
   }
 
   .modal__send-btn:hover .send-static {
-    opacity: 0;
-    transform: translate(80px, -80px);
+    transform: translate(40px, -60px);
   }
 
   .modal__send-btn:hover .send-hover {
-    opacity: 1;
-    bottom: clamp(10px,5vw,-10px);
-    right: 0;
-    transform: translate(0);
+    bottom: 0px;
+    right: 5px;
   }
+}
   .modal__error-text-send {
     position: absolute;
     left: clamp(10px, 3vw, 50px);
@@ -682,7 +687,7 @@
   }
 
   .modal__succes {
-    padding: var(--container-padding);
+    padding: 30px var(--container-padding);
     width: 100%;
     display: flex;
     justify-content: space-between;
