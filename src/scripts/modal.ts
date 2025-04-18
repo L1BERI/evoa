@@ -296,25 +296,32 @@ modalForm?.addEventListener("submit", (e) => {
     
   }
 });
-async function sendData(data: Record<string, string | undefined>) {
+async function sendData(data: any) {
   const formBlock = document.querySelector(".modal__form") as HTMLElement;
   const successBlock = document.querySelector(".modal__succes") as HTMLElement;
   const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
- 
+
+  const telegramBotToken = '7633547165:AAGVPFb-kCXLqTpGcdkg4JYMyetpPyd9OGs';
+  const chatID = '-4658210216';
+  const message = `📝 **Новая заявка с сайта**:
+
+  👤 *Имя:* ${data.name}
   
-  const formData = new FormData();
-  for (const key in data) {
-    formData.append(key, data[key] || "");
-  }
+  📞 *Способ связи: ${data.activeType}
+  
+  📧 *Контакт:* ${data.contact}
+  
+  📝 *О проекте:* ${data.project}
+  
+  💰 *Бюджет:* ${data.price} Руб.
+  `;
 
-
+  const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=MarkdownV2`;
+  
   try {
-    const res = await fetch("https://getform.io/f/apjnkwga", {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch(url);
     console.log(res);
-    
+
     if (res.ok) {
       modal.classList.add("succes");
       heroModalTitle.textContent =
