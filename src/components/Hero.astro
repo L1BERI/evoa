@@ -13,7 +13,7 @@
   .hero__container {
     width: 100%;
     height: 100vh;
-    padding-top: 420px;
+    padding-top: 50vh;
     position: relative;
   }
   #canvas {
@@ -25,7 +25,7 @@
   }
   .hero__title {
     font-weight: 400;
-    font-size: clamp(40px, 10vw,100px);
+    font-size: clamp(40px, 8.8vw,100px);
     line-height: 1.1;
     color: var(--color-black);
     max-width: 737px;
@@ -95,8 +95,8 @@
   let cursorInsideHero = false;
   let width, height;
   let time = 0;
-  const lines = 80;
-  const pointsPerLine = 160;
+  const lines = window.innerWidth > 800 ? 80 : 50;
+  const pointsPerLine = window.innerWidth > 800 ? 160 : 100;
   let mouse = { x: 0, y: 0 };
 
   function resize() {
@@ -151,7 +151,7 @@
         const noiseVal = Perlin.noise(i * 0.03, time + j * 0.05);
         const wave = (noiseVal - 0.5) * 100;
 
-        // Вихрь вокруг курсора
+        
         const swirl = cursorInsideCanvas ? swirlEffect(dist) * (dy / (dist + 0.001)) : 0;                      
 
         y += wave + swirl;
