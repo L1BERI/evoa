@@ -280,46 +280,31 @@ modal.addEventListener("scroll", () => {
 
 const sendBtn = document.querySelector("[data-modal-send]") as HTMLButtonElement | null;
 
-modalForm?.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const result = formValidation.validate(activeType);
-  
-  if (
-    result?.name?.status &&
-    result.contact?.status &&
-    result.price?.status &&
-    result.project?.status
-  ) {
-    sendData(formValidation.collectData(activeType))
-   
-    
-  }
-});
 async function sendData(data: any) {
   const formBlock = document.querySelector(".modal__form") as HTMLElement;
   const successBlock = document.querySelector(".modal__succes") as HTMLElement;
   const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
 
-  const telegramBotToken = '7633547165:AAGVPFb-kCXLqTpGcdkg4JYMyetpPyd9OGs';
-  const chatID = '-4658210216';
-  const message = `📝 <b>Новая заявка с сайта</b>:
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwKR6bpOgHc9fE1fR3N71UnUMF3bRDv-X0tkOlS6VD0WUshzbgJtFw51woKxEZt-HHd/exec";
 
-👤 <b>Имя:</b> ${data.name}
-  
-📞 <b>Способ связи:</b> ${data.activeType}
-  
-📧 <b>Контакт:</b> ${data.contact}
-  
-📝 <b>О проекте:</b> <i>${data.project}</i>
-  
- 💰 <b>Бюджет:</b> ${data.price} Руб.`;
-  
-  const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=HTML`;
-  
+  // Добавляем секретный ключ для валидации
+  const payload = {
+    secret: "evoasupersecretKey",
+    name: data.name,
+    activeType: data.activeType,
+    contact: data.contact,
+    project: data.project,
+    price: data.price,
+  };
+
   try {
-    const res = await fetch(url);
-    console.log(res);
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
 
     if (res.ok) {
       modal.classList.add("succes");
