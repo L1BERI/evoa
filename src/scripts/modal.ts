@@ -309,7 +309,7 @@ async function sendData(data: Record<string, string | undefined>) {
 
 
   try {
-    const res = await fetch("https://formsubmit.co/91c1c0b31b05a30322cc2147b0edb8b8", {
+    const res = await fetch("https://getform.io/f/apjnkwga", {
       method: "POST",
       body: formData,
     });
