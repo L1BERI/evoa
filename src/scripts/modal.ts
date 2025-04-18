@@ -280,6 +280,22 @@ modal.addEventListener("scroll", () => {
 
 const sendBtn = document.querySelector("[data-modal-send]") as HTMLButtonElement | null;
 
+modalForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const result = formValidation.validate(activeType);
+  
+  if (
+    result?.name?.status &&
+    result.contact?.status &&
+    result.price?.status &&
+    result.project?.status
+  ) {
+    sendData(formValidation.collectData(activeType))
+   
+    
+  }
+});
 async function sendData(data: any) {
   const formBlock = document.querySelector(".modal__form") as HTMLElement;
   const successBlock = document.querySelector(".modal__succes") as HTMLElement;
@@ -287,7 +303,7 @@ async function sendData(data: any) {
 
   const scriptURL = "https://script.google.com/macros/s/AKfycbwKR6bpOgHc9fE1fR3N71UnUMF3bRDv-X0tkOlS6VD0WUshzbgJtFw51woKxEZt-HHd/exec";
 
-  // Добавляем секретный ключ для валидации
+  
   const payload = {
     secret: "evoasupersecretKey",
     name: data.name,
