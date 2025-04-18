@@ -305,15 +305,15 @@ async function sendData(data: any) {
   const chatID = '-4658210216';
   const message = `📝 <b>Новая заявка с сайта</b>:
 
-  👤 <b>Имя:</b> ${data.name}
+👤 <b>Имя:</b> ${data.name}
   
-  📞 <b>Способ связи:</b> ${data.activeType}
+📞 <b>Способ связи:</b> ${data.activeType}
   
-  📧 <b>Контакт:</b> ${data.contact}
+📧 <b>Контакт:</b> ${data.contact}
   
-  📝 <b>О проекте:</b> ${data.project}
+📝 <b>О проекте:</b> <i>${data.project}</i>
   
-  💰 <b>Бюджет:</b> ${data.price} Руб.`;
+ 💰 <b>Бюджет:</b> ${data.price} Руб.`;
   
   const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=HTML`;
   
