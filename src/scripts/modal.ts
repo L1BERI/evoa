@@ -305,18 +305,18 @@ async function sendData(data: any) {
   const chatID = '-4658210216';
   const message = `📝 **Новая заявка с сайта**:
 
-  👤 *Имя:* ${data.name}
+  👤 **Имя:** ${data.name}
   
-  📞 *Способ связи: ${data.activeType}
+  📞 **Способ связи:** ${data.activeType}
   
-  📧 *Контакт:* ${data.contact}
+  📧 **Контакт:** ${data.contact}
   
-  📝 *О проекте:* ${data.project}
+  📝 **О проекте:** ${data.project}
   
-  💰 *Бюджет:* ${data.price} Руб.
+  💰 **Бюджет:** ${data.price} Руб.
   `;
 
-  const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=MarkdownV2`;
+  const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage?chat_id=${chatID}&text=${encodeURIComponent(message)}&parse_mode=Markdown`;
   
   try {
     const res = await fetch(url);
