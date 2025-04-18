@@ -165,16 +165,16 @@ links.forEach(link => {
       transition: top .8s ease,
       opacity .5s ease,
       visibility .5s ease;
-      padding: 10px 5px;
       transform-origin: center center;
       z-index: 10;
       align-items: start;
-      padding-top: 150px;
+      padding-top: 18vh;
       background-color: var(--color-white);
       gap: 10px;    
       padding-left: 20px;
       min-width: 375px;
     }
+    
     .header__nav a{
       font-weight: 400;
       font-size: clamp(40px, 10vw, 70px);
@@ -183,7 +183,11 @@ links.forEach(link => {
       transition: all .8s ease;
       transition-delay: .5s;
     }
-
+    @media (orientation: landscape){
+      .header__nav a{
+        font-size: 40px;
+      }
+    }
     .header__nav-link:nth-child(1){
       transform: translateY(-20px);
     }

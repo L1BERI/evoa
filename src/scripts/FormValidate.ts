@@ -176,6 +176,15 @@ class FormValidation{
       clearRow = (event: any)=> {
         event.target.closest('.modal__row').classList.remove('invalid-row')
       }
+      collectData = (activeType: string) => {
+        return {
+          name:this.selectors.nameInput?.value,
+          activeType,
+          contact: this.selectors.contactInput?.value,
+          project: this.selectors.projectTextarea?.value,
+          price: this.selectors.priceInput?.value
+        }
+      }
 }
 
 export const formValidation = new FormValidation()

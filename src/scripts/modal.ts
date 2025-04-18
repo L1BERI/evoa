@@ -283,20 +283,56 @@ modalForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const result = formValidation.validate(activeType);
-
+  
   if (
     result?.name?.status &&
     result.contact?.status &&
     result.price?.status &&
     result.project?.status
   ) {
-    const formBlock = document.querySelector(".modal__form") as HTMLElement;
-    const successBlock = document.querySelector(".modal__succes") as HTMLElement;
-    const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
+    sendData(formValidation.collectData(activeType))
+   
+    
+  }
+});
+async function sendData(data: Record<string, string | undefined>) {
+  const formBlock = document.querySelector(".modal__form") as HTMLElement;
+  const successBlock = document.querySelector(".modal__succes") as HTMLElement;
+  const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
 
+  const formData = new FormData();
+  for (const key in data) {
+    formData.append(key, data[key] || "");
+  }
+
+  // Можно добавить скрытые поля, если хочешь редирект или антибот-защиту
+  // formData.append("_next", "https://yourdomain.com/thanks.html");
+
+  try {
+    const res = await fetch("https://formsubmit.co/kael1nvoker@mail.ru", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (res.ok) {
+      modal.classList.add("succes");
+      heroModalTitle.textContent =
+        "Отлично! Мы внимательно ознакомимся с брифом и свяжемся с вами в ближайшее время.";
+
+      formBlock.classList.add("fade-out");
+      setTimeout(() => {
+        formBlock.style.display = "none";
+        successBlock.style.display = "flex";
+        successBlock.classList.add("fade-in");
+      }, 300);
+    } else {
+      throw new Error("Ошибка отправки");
+    }
+  } catch (error) {
+    console.error(error);
     modal.classList.add("succes");
     heroModalTitle.textContent =
-      "Отлично! Мы внимательно ознакомимся с брифом и свяжемся с вами в ближайшее время.";
+      "К сожалению, отправить заявку не получилось. Попробуйте связаться с нами через контакты.";
 
     formBlock.classList.add("fade-out");
     setTimeout(() => {
@@ -305,4 +341,4 @@ modalForm?.addEventListener("submit", (e) => {
       successBlock.classList.add("fade-in");
     }, 300);
   }
-});
+}
