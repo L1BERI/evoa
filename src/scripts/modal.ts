@@ -1,17 +1,16 @@
-import { log } from 'node_modules/astro/dist/core/logger/core';
-import {lenis} from './lenisScroll'
+import { lenis } from "./lenisScroll";
 
 const openModalBtn = document.querySelector("[data-open-modal-btn]");
 const modalEl = document.querySelector("[data-modal]");
 const overlayEl = document.querySelector("[data-overlay]");
 const modalCloseBtn = modalEl?.querySelector("[data-modal-close]");
 const bodyEl = document.body;
-const lenisEl = document.querySelector('.lenis')
+const lenisEl = document.querySelector(".lenis");
 
 let modalOpen = false;
 
 openModalBtn?.addEventListener("click", (e) => {
-  lenis.stop()
+  lenis.stop();
   e.preventDefault();
   modalEl?.classList.add("modal-active");
   overlayEl?.classList.add("overlay-active");
@@ -19,14 +18,14 @@ openModalBtn?.addEventListener("click", (e) => {
 });
 
 overlayEl?.addEventListener("click", () => {
-    lenis.start()
+  lenis.start();
   modalEl?.classList.remove("modal-active");
   overlayEl?.classList.remove("overlay-active");
   lenisEl?.classList.remove("body--fixed");
 });
 
 modalCloseBtn?.addEventListener("click", (e) => {
-    lenis.start()
+  lenis.start();
   e.preventDefault();
   modalEl?.classList.remove("modal-active");
   overlayEl?.classList.remove("overlay-active");
@@ -35,15 +34,23 @@ modalCloseBtn?.addEventListener("click", (e) => {
 
 import { formValidation } from "@scripts/FormValidate.js";
 
+const modalForm = document.querySelector(
+  "[data-modal-form]"
+) as HTMLFormElement | null;
 
-const modalForm = document.querySelector("[data-modal-form]") as HTMLFormElement | null;
-
-const modalNameInput = modalForm?.querySelector("[data-name-input]") as HTMLInputElement | null;
-const modalNameLabel = modalForm?.querySelector("[data-name-label]") as HTMLLabelElement | null;
+const modalNameInput = modalForm?.querySelector(
+  "[data-name-input]"
+) as HTMLInputElement | null;
+const modalNameLabel = modalForm?.querySelector(
+  "[data-name-label]"
+) as HTMLLabelElement | null;
 
 modalNameInput?.addEventListener("input", () => {
   if (modalNameInput) {
-    modalNameInput.value = modalNameInput.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, "");
+    modalNameInput.value = modalNameInput.value.replace(
+      /[^a-zA-Zа-яА-ЯёЁ\s]/g,
+      ""
+    );
   }
 });
 
@@ -60,9 +67,15 @@ modalNameInput?.addEventListener("blur", () => {
   }
 });
 
-const contactInput = document.querySelector("[data-contact-input]") as HTMLInputElement;
-const contactLabel = document.querySelector("[data-contact-label]") as HTMLLabelElement | null;
-const buttons = document.querySelectorAll("[data-contact-btn]") as NodeListOf<HTMLButtonElement>;
+const contactInput = document.querySelector(
+  "[data-contact-input]"
+) as HTMLInputElement;
+const contactLabel = document.querySelector(
+  "[data-contact-label]"
+) as HTMLLabelElement | null;
+const buttons = document.querySelectorAll(
+  "[data-contact-btn]"
+) as NodeListOf<HTMLButtonElement>;
 
 let activeType = "tg";
 
@@ -162,8 +175,12 @@ contactInput.addEventListener("blur", () => {
 
 function setupDotMovement(wrapperSelector: string) {
   const wrapper = document.querySelector(wrapperSelector) as HTMLElement | null;
-  const buttons = wrapper?.querySelectorAll(".modal__row-btn") as NodeListOf<HTMLElement> | undefined;
-  const dot = wrapper?.querySelector(".modal__active-dot") as HTMLElement | null;
+  const buttons = wrapper?.querySelectorAll(".modal__row-btn") as
+    | NodeListOf<HTMLElement>
+    | undefined;
+  const dot = wrapper?.querySelector(
+    ".modal__active-dot"
+  ) as HTMLElement | null;
 
   function updateActiveDot(target: HTMLElement) {
     const offset =
@@ -179,7 +196,9 @@ function setupDotMovement(wrapperSelector: string) {
     });
   });
 
-  const initialActive = wrapper?.querySelector(".btn-active") as HTMLElement | null;
+  const initialActive = wrapper?.querySelector(
+    ".btn-active"
+  ) as HTMLElement | null;
   if (initialActive) updateActiveDot(initialActive);
 }
 
@@ -205,11 +224,19 @@ buttons.forEach((button) => {
 
 updateContactInput("tg");
 
-const modalPriceInput = modalForm?.querySelector("[data-price-input]") as HTMLInputElement | null;
-const modalPriceLabel = modalForm?.querySelector("[data-price-label]") as HTMLLabelElement | null;
+const modalPriceInput = modalForm?.querySelector(
+  "[data-price-input]"
+) as HTMLInputElement | null;
+const modalPriceLabel = modalForm?.querySelector(
+  "[data-price-label]"
+) as HTMLLabelElement | null;
 
 function updateInputState(input: HTMLInputElement) {
-  if (input.value.trim() !== "" && input.value !== "@" && input.value !== "+7") {
+  if (
+    input.value.trim() !== "" &&
+    input.value !== "@" &&
+    input.value !== "+7"
+  ) {
     input.classList.add("is-filled");
   } else {
     input.classList.remove("is-filled");
@@ -239,7 +266,9 @@ initInputStateHandlers(modalNameInput);
 initInputStateHandlers(contactInput);
 initInputStateHandlers(modalPriceInput);
 
-const modalPriceBtns = modalForm?.querySelectorAll("[data-price-btn]") as NodeListOf<HTMLButtonElement>;
+const modalPriceBtns = modalForm?.querySelectorAll(
+  "[data-price-btn]"
+) as NodeListOf<HTMLButtonElement>;
 
 modalPriceInput?.addEventListener("focus", () => {
   if (modalPriceLabel) {
@@ -278,48 +307,39 @@ modal.addEventListener("scroll", () => {
   }
 });
 
-const sendBtn = document.querySelector("[data-modal-send]") as HTMLButtonElement | null;
+const sendBtn = document.querySelector(
+  "[data-modal-send]"
+) as HTMLButtonElement | null;
 
 modalForm?.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const result = formValidation.validate(activeType);
-  
+
   if (
     result?.name?.status &&
     result.contact?.status &&
     result.price?.status &&
     result.project?.status
   ) {
-    sendData(formValidation.collectData(activeType))
-   
-    
+    sendData(formValidation.collectData(activeType));
   }
 });
 async function sendData(data: any) {
   const formBlock = document.querySelector(".modal__form") as HTMLElement;
   const successBlock = document.querySelector(".modal__succes") as HTMLElement;
-  const heroModalTitle = modal.querySelector(".modal__hero-title") as HTMLElement;
+  const heroModalTitle = modal.querySelector(
+    ".modal__hero-title"
+  ) as HTMLElement;
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbwKR6bpOgHc9fE1fR3N71UnUMF3bRDv-X0tkOlS6VD0WUshzbgJtFw51woKxEZt-HHd/exec";
-
-  
-  const payload = {
-    secret: "evoasupersecretKey",
-    name: data.name,
-    activeType: data.activeType,
-    contact: data.contact,
-    project: data.project,
-    price: data.price,
-  };
+ 
+  const url = `https://script.google.com/macros/s/AKfycbwKR6bpOgHc9fE1fR3N71UnUMF3bRDv-X0tkOlS6VD0WUshzbgJtFw51woKxEZt-HHd/exec`;
 
   try {
-    const res = await fetch(scriptURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+    const res = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
     });
 
     if (res.ok) {
