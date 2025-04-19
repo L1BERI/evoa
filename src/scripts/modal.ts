@@ -333,13 +333,15 @@ async function sendData(data: any) {
   ) as HTMLElement;
 
  
-  const url = `https://script.google.com/macros/s/AKfycbwKR6bpOgHc9fE1fR3N71UnUMF3bRDv-X0tkOlS6VD0WUshzbgJtFw51woKxEZt-HHd/exec`;
+
 
   try {
-    const res = await fetch(url, {
-      method: 'POST',
+   const res = await fetch("/send-message", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(data),
-      headers: { 'Content-Type': 'application/json' }
     });
 
     if (res.ok) {
