@@ -336,7 +336,7 @@ async function sendData(data: any) {
 
 
   try {
-   const res = await fetch("https://l1beritest.ru/send-message.php", {
+   const res = await fetch("https://l1beritest.ru/telegram-send.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
