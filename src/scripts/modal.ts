@@ -336,7 +336,7 @@ async function sendData(data: any) {
 
 
   try {
-   const res = await fetch("/send-message", {
+   const res = await fetch("https://l1beritest.ru/send-message.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

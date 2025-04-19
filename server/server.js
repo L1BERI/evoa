@@ -10,7 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
-app.use(express.static(path.resolve("dist"))); // чтобы фронт отдавался
+app.use(express.static(path.resolve("dist"))); 
 
 // Telegram webhook
 app.post("/send-message", async (req, res) => {
