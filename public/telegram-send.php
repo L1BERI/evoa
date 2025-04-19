@@ -1,35 +1,52 @@
 <?php
-// Настройки
-$token = '7633547165:AAGVPFb-kCXLqTpGcdkg4JYMyetpPyd9OGs';
-$chat_id = '-4658210216';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
+header('Content-Type: application/json');
 
-$data = json_decode(file_get_contents('php://input'), true);
+$input = json_decode(file_get_contents('php://input'), true);
 
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !$data) {
+if (!$input) {
+    echo json_encode(['error' => 'No data received']);
     http_response_code(400);
-    echo json_encode(['status' => 'error', 'message' => 'Метод должен быть POST']);
     exit;
 }
 
-// Формируем сообщение
-$message = "📝 Новая заявка с сайта:\n";
-$message .= "Имя: " . ($data['name'] ?? '—') . "\n";
-$message .= "Контакт: " . ($data['contact'] ?? '—') . "\n";
-$message .= "Тип: " . ($data['activeType'] ?? '—') . "\n";
-$message .= "Проект: " . ($data['project'] ?? '—') . "\n";
-$message .= "Бюджет: " . ($data['price'] ?? '—');
 
+$token = '7633547165:AAGVPFb-kCXLqTpGcdkg4JYMyetpPyd9OGs';
+$chat_id = '-4658210216';
 
-$url = "https://api.telegram.org/bot{$token}/sendMessage";
+$message = "💬 Новое сообщение:\n\n" .
+    "👤 Имя: " . $input['name'] . "\n" .
+    "📞 Контакт: " . $input['contact'] . "\n" .
+    "📌 Проект: " . $input['project'] . "\n" .
+    "💰 Бюджет: " . $input['price'] . "\n" .
+    "📨 Способ связи: " . $input['activeType'];
 
-$response = file_get_contents($url . '?' . http_build_query([
+$url = "https://api.telegram.org/bot$token/sendMessage";
+
+$params = [
     'chat_id' => $chat_id,
     'text' => $message,
     'parse_mode' => 'HTML'
-]));
+];
 
-// Ответ клиенту
-echo json_encode(['status' => 'success', 'message' => 'Отправлено!']);
+$options = [
+    'http' => [
+        'method'  => 'POST',
+        'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+        'content' => http_build_query($params)
+    ]
+];
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+if ($result) {
+    echo json_encode(['success' => true]);
+} else {
+    echo json_encode(['error' => 'Message not sent']);
+    http_response_code(500);
+}
 ?>
