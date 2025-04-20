@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.json());
 app.use(express.static(path.resolve("dist"))); 
 
-// Telegram webhook
+
 app.post("/send-message", async (req, res) => {
   const { name, contact, project, price, activeType } = req.body;
 
