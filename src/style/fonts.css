@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Manrope";
-  src: url("/evoa/fonts/Manrope-Light.woff2") format("woff2");
+  src: url("/fonts/Manrope-Light.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Manrope";
-  src: url("/evoa/fonts/Manrope-Medium.woff2") format("woff2");
+  src: url("/fonts/Manrope-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Manrope";
-  src: url("/evoa/fonts/Manrope-Regular.woff2") format("woff2");
+  src: url("/fonts/Manrope-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
